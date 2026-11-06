@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thalão Cortes - Barbearia. Seu estilo, sua identidade.">
+  <title>Thalão Cortes | Barbearia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #10100f;
+      --dark: #181817;
+      --gold: #c9a66b;
+      --cream: #f3eee5;
+      --gray: #aaa69f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ffffff15;
+      background: #10100fee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    .logo span {
+      display: block;
+      font: 10px 'DM Sans', sans-serif;
+      letter-spacing: 5px;
+      text-align: center;
+      color: var(--cream);
+    }
+
+    .links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .links a:hover {
+      color: var(--gold);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #17130d;
+      padding: 14px 23px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      transition: .3s;
+      border: 1px solid var(--gold);
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 660px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background:
+        linear-gradient(90deg, #10100f 5%, #10100fcf 50%, #10100f50),
+        url('https://images.unsplash.com/photo- barber?auto=format&fit=crop&w=1800&q=85');
+      background-image:
+        linear-gradient(90deg, #10100f 5%, #10100fcf 50%, #10100f50),
+        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.08;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: #c2beb7;
+      max-width: 430px;
+      line-height: 1.8;
+      margin-bottom: 35px;
+      font-size: 15px;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      font: 500 clamp(32px, 4vw, 45px) 'Playfair Display', serif;
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .services {
+      background: var(--dark);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 35px 28px;
+      background: #20201e;
+      border: 1px solid #ffffff12;
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      color: var(--gold);
+      font-size: 27px;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font: 22px 'Playfair Display', serif;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .price {
+      color: var(--gold);
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+    }
+
+    .about-text h2 {
+      font: 500 42px 'Playfair Display', serif;
+      margin: 15px 0 22px;
+    }
+
+    .about-text p {
+      color: var(--gray);
+      line-height: 1.9;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    .gallery {
+      background: var(--dark);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    .booking {
+      text-align: center;
+      background:
+        linear-gradient(#10100fe8, #10100fe8),
+        url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1600&q=80') center/cover;
+    }
+
+    .booking h2 {
+      font: 500 clamp(35px, 5vw, 55px) 'Playfair Display', serif;
+      margin: 15px 0;
+    }
+
+    .booking p {
+      color: #c2beb7;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid #ffffff15;
+    }
+
+    footer .logo {
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: var(--gray);
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .mobile-menu {
+      display: none;
+      background: none;
+      border: 0;
+      color: var(--cream);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        height: 70px;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 25px;
+      }
+
+      .links.active {
+        display: flex;
+      }
+
+      .links .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero {
+        min-height: 580px;
+        background-position: 60% center;
+      }
+
+      .service-grid,
+      .about-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .about-image {
+        height: 320px;
+      }
+
+      .gallery-grid img {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        THALÃO
+        <span>BARBER SHOP</span>
+      </a>
+
+      <button class="mobile-menu" onclick="toggleMenu()" aria-label="Abrir menu">☰</button>
+
+      <nav class="links" id="menu">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato" class="btn">AGENDAR HORÁRIO</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">THALÃO BARBER SHOP</div>
+          <h1>Seu estilo.<br><span>Sua identidade.</span></h1>
+          <p>
+            Mais que um corte, uma experiência.
+            Cuidado em cada detalhe para você sair
+            com o estilo que combina com sua personalidade.
+          </p>
+          <a href="#contato" class="btn">AGENDAR MEU CORTE →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicos">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">O QUE OFERECEMOS</div>
+          <h2>Nossos serviços</h2>
+          <p>Qualidade, cuidado e atenção em cada detalhe.</p>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="service-icon">✂</div>
+            <h3>Corte masculino</h3>
+            <p>Cortes clássicos e modernos, com acabamento impecável.</p>
+            <div class="price">R$ 35,00</div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">♧</div>
+            <h3>Barba</h3>
+            <p>Modelagem, alinhamento e cuidado para sua barba.</p>
+            <div class="price">R$ 25,00</div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Corte + Barba</h3>
+            <p>O combo completo para renovar seu visual.</p>
+            <div class="price">R$ 55,00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container about-grid">
+        <img
+          class="about-image"
+          src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=85"
+          alt="Barbeiro realizando um corte"
+        >
+
+        <div class="about-text">
+          <div class="eyebrow">NOSSA ESSÊNCIA</div>
+          <h2>Estilo não é detalhe. É identidade.</h2>
+          <p>
+            Na Thalão Cortes, acreditamos que cada pessoa
+            tem seu próprio estilo. Nosso compromisso é
+            oferecer um atendimento de qualidade, em um
+            ambiente pensado para você.
+          </p>
+          <a href="#contato" class="btn">VENHA NOS CONHECER</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">NOSSO TRABALHO</div>
+          <h2>Estilo em cada corte</h2>
+          <p>Alguns detalhes fazem toda a diferença.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=80" alt="Interior de barbearia">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=80" alt="Corte masculino">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=80" alt="Barbeiro trabalhando">
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="contato">
+      <div class="container">
+        <div class="eyebrow">SEU PRÓXIMO VISUAL COMEÇA AQUI</div>
+        <h2>Pronto para renovar<br>seu estilo?</h2>
+        <p>Entre em contato e agende seu horário.</p>
+        <a
+          href="https://wa.me/5512999999999"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn"
+        >
+          AGENDAR PELO WHATSAPP →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logo">
+        THALÃO
+        <span>BARBER SHOP</span>
+      </div>
+      <p>Seu estilo. Sua identidade.</p>
+      <p>© 2026 Thalão Cortes. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+
+    document.querySelectorAll('.links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('menu').classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
